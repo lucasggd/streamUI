@@ -1,0 +1,93 @@
+<div class="h-screen w-screen bg-gray-800">
+  <header class="w-full h-1/10 flex justify-center items-center">
+    <div id="team-a" class="w-1/2 px-5 h-full flex justify-end">
+      <!-- bg-orange-600 -->
+      <div
+        class="w-3 mx-1 h-1/2 border border-gray-500"
+        [ngClass]="{
+          'bg-orange-600 border-0': matchData?.teamAMatchPoints >= 1
+        }"
+      ></div>
+      <div
+        class="w-3 mx-1 h-1/2 border border-gray-500"
+        [ngClass]="{
+          'bg-orange-600 border-0': matchData?.teamAMatchPoints >= 2
+        }"
+      ></div>
+      <div
+        class="w-3 mx-1 h-1/2 border border-gray-500"
+        [ngClass]="{
+          'bg-orange-600 border-0': matchData?.teamAMatchPoints >= 3
+        }"
+      ></div>
+    </div>
+    <div id="team-b" class="w-1/2 px-5 h-full flex justify-start">
+      <!-- bg-sky-600 -->
+      <div
+        class="w-3 mx-1 h-1/2 border border-gray-500"
+        [ngClass]="{
+          'bg-sky-600 border-0': matchData?.teamBMatchPoints >= 1
+        }"
+      ></div>
+      <div
+        class="w-3 mx-1 h-1/2 border border-gray-500"
+        [ngClass]="{
+          'bg-sky-600 border-0': matchData?.teamBMatchPoints >= 2
+        }"
+      ></div>
+      <div
+        class="w-3 mx-1 h-1/2 border border-gray-500"
+        [ngClass]="{
+          'bg-sky-600 border-0': matchData?.teamBMatchPoints >= 3
+        }"
+      ></div>
+    </div>
+  </header>
+
+  <section class="flex w-full h-9/10">
+    <div class="w-1/2 h-full flex flex-col justify-center team-a">
+      <div *ngFor="let i of [0, 1, 2, 3, 4]" class="user-div">
+        <!-- Player picture -->
+        <!-- <div class="user-picture"></div> -->
+
+        <!-- Player name and health -->
+        <div class="user-stats">
+          <p>{{ matchData?.teamAPlayers[i]?.nickname }}</p>
+          <div class="user-health-div">
+            <p>{{ matchData?.teamAPlayers[i]?.health }}</p>
+            <div
+              class="user-health"
+              [style.width.%]="matchData?.teamAPlayers[i]?.health"
+            ></div>
+            <div
+              class="user-damage"
+              [style.width.%]="matchData?.teamAPlayers[i]?.health"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-1/2 h-full flex flex-col justify-center team-b">
+      <div *ngFor="let i of [0, 1, 2, 3, 4]" class="user-div">
+        <!-- Player picture -->
+        <!-- <div class="user-picture"></div> -->
+
+        <!-- Player name and health -->
+        <div class="user-stats">
+          <p>{{ matchData?.teamAPlayers[i]?.nickname }}</p>
+          <div class="user-health-div">
+            <p>{{ matchData?.teamAPlayers[i]?.health }}</p>
+            <div
+              class="user-health"
+              [style.width.%]="matchData?.teamAPlayers[i]?.health"
+            ></div>
+            <div
+              class="user-damage"
+              [style.width.%]="matchData?.teamAPlayers[i]?.health"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,132 @@
+.user-div {
+  margin: 0.5rem 1rem;
+  width: 20rem;
+  height: 5rem;
+  display: flex;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.user-div .user-picture {
+  width: 25%;
+  height: 100%;
+}
+
+.user-div .user-stats {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user-div .user-stats p {
+  margin: 0.5rem 0 0 0;
+}
+.user-div .user-health-div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.user-div .user-health-div p {
+  z-index: 12 !important;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #cecece;
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 0;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 800;
+}
+
+.user-div .user-stats .user-health {
+  transition: 1000ms ease-in-out;
+  height: 100%;
+  z-index: 11 !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.user-div .user-stats .user-damage {
+  transition: 1000ms ease-in-out;
+  transition-delay: 800ms;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  background-color: rgb(163, 31, 31);
+}
+
+.team-a .user-health {
+  background: #4a290d;
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(74, 41, 13, 1) 0%,
+    rgba(184, 101, 50, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(74, 41, 13, 1) 0%,
+    rgba(184, 101, 50, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(74, 41, 13, 1) 0%,
+    rgba(184, 101, 50, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(
+  startColorstr="#4A290D",
+  endColorstr="#B86532",
+  GradientType=1
+);
+}
+
+.team-b {
+  align-items: end;
+}
+
+.team-b .user-div {
+  flex-direction: row-reverse;
+}
+
+.team-b .user-div .user-stats p {
+  text-align: end;
+}
+
+.team-b .user-health {
+  background: #0d124a;
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(13, 18, 74, 1) 0%,
+    rgba(50, 61, 184, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(13, 18, 74, 1) 0%,
+    rgba(50, 61, 184, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(13, 18, 74, 1) 0%,
+    rgba(50, 61, 184, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(
+  startColorstr="#0D124A",
+  endColorstr="#323DB8",
+  GradientType=1
+  );
+}
+
+.team-b .user-health-div {
+  transform: scaleX(-1);
+}
+
+.team-b .user-health-div p {
+  transform: scaleX(-1);
+}
