@@ -17,17 +17,6 @@ export class CsUiComponent {
   constructor(private _webSocketService: WebSocketService) {}
 
   ngOnInit(): void {
-    // this.matchData = {};
-    // this.matchData.teamAPlayers = [
-    //   { health: 80, nickname: 'Josh A' },
-    //   { health: 100, nickname: 'Second A' },
-    //   { health: 100, nickname: 'Third A' },
-    // ];
-    // this.matchData.teamBPlayers = [
-    //   { health: 100, nickname: 'Josh B' },
-    //   { health: 100, nickname: 'Second B' },
-    //   { health: 100, nickname: 'Third B' },
-    // ];
     this._webSocketService.listen((matchData) => {
       this.matchData = matchData;
     });
@@ -36,5 +25,9 @@ export class CsUiComponent {
   ngOnDestroy() {
     this.destroy$.next(true);
     this.destroy$.complete();
+  }
+
+  transformHealthToWidth(health: number): number {
+    return health > 100 ? 100 : health;
   }
 }

@@ -1,46 +1,55 @@
 <div class="h-screen w-screen bg-gray-800">
-  <header class="w-full h-1/10 flex justify-center items-center">
-    <div id="team-a" class="w-1/2 px-5 h-full flex justify-end">
+  <header class="w-full h-1/10 flex justify-center items-start">
+    <div
+      id="team-a-score"
+      class="w-1/2 px-5 h-1/2 flex justify-start flex-row-reverse"
+    >
       <!-- bg-orange-600 -->
       <div
-        class="w-3 mx-1 h-1/2 border border-gray-500"
+        class="w-3 mx-1 full border border-gray-500"
         [ngClass]="{
           'bg-orange-600 border-0': matchData?.teamAMatchPoints >= 1
         }"
       ></div>
       <div
-        class="w-3 mx-1 h-1/2 border border-gray-500"
+        class="w-3 mx-1 full border border-gray-500"
         [ngClass]="{
           'bg-orange-600 border-0': matchData?.teamAMatchPoints >= 2
         }"
       ></div>
       <div
-        class="w-3 mx-1 h-1/2 border border-gray-500"
+        class="w-3 mx-1 full border border-gray-500"
         [ngClass]="{
           'bg-orange-600 border-0': matchData?.teamAMatchPoints >= 3
         }"
       ></div>
+      <span class="text-2xl font-bold text-white h-full flex items-center mx-4"
+        >Team A</span
+      >
     </div>
-    <div id="team-b" class="w-1/2 px-5 h-full flex justify-start">
+    <div id="team-b-score" class="w-1/2 px-5 h-1/2 flex justify-start">
       <!-- bg-sky-600 -->
       <div
-        class="w-3 mx-1 h-1/2 border border-gray-500"
+        class="w-3 mx-1 h-full border border-gray-500"
         [ngClass]="{
           'bg-sky-600 border-0': matchData?.teamBMatchPoints >= 1
         }"
       ></div>
       <div
-        class="w-3 mx-1 h-1/2 border border-gray-500"
+        class="w-3 mx-1 h-full border border-gray-500"
         [ngClass]="{
           'bg-sky-600 border-0': matchData?.teamBMatchPoints >= 2
         }"
       ></div>
       <div
-        class="w-3 mx-1 h-1/2 border border-gray-500"
+        class="w-3 mx-1 h-full border border-gray-500"
         [ngClass]="{
           'bg-sky-600 border-0': matchData?.teamBMatchPoints >= 3
         }"
       ></div>
+      <span class="text-2xl font-bold text-white h-full flex items-center mx-4"
+        >Team B</span
+      >
     </div>
   </header>
 
@@ -54,14 +63,20 @@
         <div class="user-stats">
           <p>{{ matchData?.teamAPlayers[i]?.nickname }}</p>
           <div class="user-health-div">
-            <p>{{ matchData?.teamAPlayers[i]?.health }}</p>
+            <p>
+              {{ transformHealthToWidth(matchData?.teamAPlayers[i]?.health) }}
+            </p>
             <div
               class="user-health"
-              [style.width.%]="matchData?.teamAPlayers[i]?.health"
+              [style.width.%]="
+                transformHealthToWidth(matchData?.teamAPlayers[i]?.health)
+              "
             ></div>
             <div
               class="user-damage"
-              [style.width.%]="matchData?.teamAPlayers[i]?.health"
+              [style.width.%]="
+                transformHealthToWidth(matchData?.teamAPlayers[i]?.health)
+              "
             ></div>
           </div>
         </div>
@@ -74,16 +89,22 @@
 
         <!-- Player name and health -->
         <div class="user-stats">
-          <p>{{ matchData?.teamAPlayers[i]?.nickname }}</p>
+          <p>{{ matchData?.teamBPlayers[i]?.nickname }}</p>
           <div class="user-health-div">
-            <p>{{ matchData?.teamAPlayers[i]?.health }}</p>
+            <p>
+              {{ transformHealthToWidth(matchData?.teamBPlayers[i]?.health) }}
+            </p>
             <div
               class="user-health"
-              [style.width.%]="matchData?.teamAPlayers[i]?.health"
+              [style.width.%]="
+                transformHealthToWidth(matchData?.teamBPlayers[i]?.health)
+              "
             ></div>
             <div
               class="user-damage"
-              [style.width.%]="matchData?.teamAPlayers[i]?.health"
+              [style.width.%]="
+                transformHealthToWidth(matchData?.teamBPlayers[i]?.health)
+              "
             ></div>
           </div>
         </div>
