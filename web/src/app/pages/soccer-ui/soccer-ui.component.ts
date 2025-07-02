@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
-import { WebSocketService } from '../../services/web-socket.service';
+import { MatIconModule } from '@angular/material/icon';
 import { Subject } from 'rxjs';
-import { CommonModule } from '@angular/common';
+import { WebSocketService } from '../../services/web-socket.service';
+import { UpperCasePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-cs-ui',
-  imports: [CommonModule],
-  templateUrl: './cs-ui.component.html',
-  styleUrl: './cs-ui.component.css',
+  selector: 'app-soccer-ui',
+  imports: [MatIconModule, UpperCasePipe],
+  templateUrl: './soccer-ui.component.html',
+  styleUrl: './soccer-ui.component.css',
 })
-export class CsUiComponent {
+export class SoccerUiComponent {
   private readonly destroy$ = new Subject();
 
   public matchData: any;
@@ -19,15 +20,11 @@ export class CsUiComponent {
   ngOnInit(): void {
     this._webSocketService.listen((matchData) => {
       this.matchData = matchData;
-    }, 'cs');
+    }, 'soccer');
   }
 
   ngOnDestroy() {
     this.destroy$.next(true);
     this.destroy$.complete();
-  }
-
-  transformHealthToWidth(health: number): number {
-    return health > 100 ? 100 : health;
   }
 }

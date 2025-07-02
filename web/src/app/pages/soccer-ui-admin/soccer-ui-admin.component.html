@@ -1,0 +1,108 @@
+<form [formGroup]="form">
+  <div
+    class="h-screen w-screen bg-gray-800 text-white flex justify-center items-center"
+  >
+    <div class="w-1/2 px-5 h-auto flex justify-end items-center">
+      <div class="flex flex-col justify-center items-center">
+        <mat-form-field>
+          <mat-label>team A Name</mat-label>
+          <input matInput type="text" [formControlName]="'teamAName'" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>team A Short name</mat-label>
+          <input matInput type="text" [formControlName]="'teamAShortName'" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>team A Primary color</mat-label>
+          <input
+            matInput
+            type="number"
+            [formControlName]="'teamAPrimaryColor'"
+          />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>team A Secondary color</mat-label>
+          <input
+            matInput
+            type="number"
+            [formControlName]="'teamASecondaryColor'"
+          />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>team A Match Points</mat-label>
+          <input
+            matInput
+            type="number"
+            [formControlName]="'teamAMatchPoints'"
+          />
+        </mat-form-field>
+        <button
+          class="bg-black h-12 mt-5 py-3 px-8 rounded-md cursor-pointer"
+          matButton="filled"
+          (click)="score('a')"
+        >
+          Gol
+        </button>
+      </div>
+    </div>
+
+    <div class="w-1/2 px-5 h-auto flex justify-start items-center">
+      <div class="flex flex-col justify-center items-center">
+        <mat-form-field>
+          <mat-label>team B Name</mat-label>
+          <input matInput type="text" [formControlName]="'teamBName'" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>team B Short name</mat-label>
+          <input matInput type="text" [formControlName]="'teamBShortName'" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>team B Primary color</mat-label>
+          <input
+            matInput
+            type="number"
+            [formControlName]="'teamBPrimaryColor'"
+          />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>team B Secondary color</mat-label>
+          <input
+            matInput
+            type="number"
+            [formControlName]="'teamBSecondaryColor'"
+          />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>team B Match Points</mat-label>
+          <input
+            matInput
+            type="number"
+            [formControlName]="'teamBMatchPoints'"
+          />
+        </mat-form-field>
+        <button
+          class="bg-black h-12 mt-5 py-3 px-8 rounded-md cursor-pointer"
+          matButton="filled"
+          (click)="score('b')"
+        >
+          Gol
+        </button>
+      </div>
+    </div>
+  </div>
+  <button
+    class="bg-black h-12 mt-5 py-3 px-8 rounded-md cursor-pointer absolute right-5 top-0 text-white"
+    matButton="filled"
+    (click)="update()"
+  >
+    Update
+  </button>
+</form>

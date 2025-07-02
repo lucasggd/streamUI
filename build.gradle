@@ -18,11 +18,15 @@ repositories {
 }
 
 dependencies {
-//	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.projectlombok:lombok:1.18.38'
 	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-//	testImplementation 'org.springframework.security:spring-security-test'
+
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
 }
 
 tasks.named('test') {

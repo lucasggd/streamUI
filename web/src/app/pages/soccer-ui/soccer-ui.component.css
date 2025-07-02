@@ -1,0 +1,24 @@
+#score-div {
+  position: absolute;
+  left: 5rem;
+  top: 5rem;
+}
+
+#timer-div {
+  width: 20%;
+  height: 100%;
+  background-color: #e9a425;
+}
+
+#team-a {
+  width: 45%;
+  height: 100%;
+  display: flex;
+}
+
+#team-b {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}

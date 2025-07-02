@@ -1,0 +1,56 @@
+<div class="h-screen w-screen bg-gray-800 relative">
+  <div id="score-div" class="w-90 h-8 flex">
+    <div id="timer-div" class="flex justify-center items-center text-white">
+      <p class="text-black text-xl font-bold">00:00</p>
+    </div>
+    <div class="flex justify-between w-full h-full">
+      <div id="team-a">
+        <div
+          class="team-icon w-3/10 h-full bg-black flex justify-center items-center"
+        >
+          <mat-icon
+            style="color: #fff; font-size: 2.3rem; width: auto; height: auto"
+            fontIcon="home"
+          ></mat-icon>
+        </div>
+        <div
+          class="team-name w-5/10 h-full bg-black flex justify-center items-center text-white"
+        >
+          <p class="text-white text-2xl font-bold">
+            {{ matchData?.teamA?.shortName | uppercase }}
+          </p>
+        </div>
+        <div
+          class="team-score w-2/10 h-full bg-white flex justify-center items-center text-white"
+        >
+          <p class="text-black text-2xl font-bold">
+            {{ matchData?.teamA?.matchPoints }}
+          </p>
+        </div>
+      </div>
+      <div></div>
+      <div id="team-b">
+        <div class="team-icon w-3/10 h-full bg-black">
+          <mat-icon
+            style="color: #fff; font-size: 1.8rem; width: auto; height: auto"
+            fontIcon="add_moderator"
+          ></mat-icon>
+        </div>
+        <div
+          class="team-name w-5/10 h-full bg-black flex justify-center items-center text-white"
+        >
+          <p class="text-white text-2xl font-bold">
+            {{ matchData?.teamB?.shortName | uppercase }}
+          </p>
+        </div>
+        <div
+          class="team-score w-2/10 h-full bg-white flex justify-center items-center text-white"
+        >
+          <p class="text-black text-2xl font-bold">
+            {{ matchData?.teamB?.matchPoints }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

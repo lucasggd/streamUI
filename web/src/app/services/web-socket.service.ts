@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
 import { CompatClient, Stomp, StompSubscription } from '@stomp/stompjs';
-import { Observable } from 'rxjs';
-import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
-import { MatchData } from '../interface/MatchData';
 
 export type ListenerCallBack = (message: any) => void;
 
@@ -19,17 +16,17 @@ export class WebSocketService {
     this.connection.connect({}, () => {});
   }
 
-  public send(data: MatchData): void {
+  public sendData(data: any, game: 'cs' | 'soccer'): void {
     if (this.connection && this.connection.connected) {
-      this.connection.send('/update/data', {}, JSON.stringify(data));
+      this.connection.send(`/update/${game}/data`, {}, JSON.stringify(data));
     }
   }
 
-  public listen(fun: ListenerCallBack): void {
+  public listen(fun: ListenerCallBack, game: 'cs' | 'soccer'): void {
     if (this.connection) {
       this.connection.connect({}, () => {
         this.subscription = this.connection!.subscribe(
-          '/send/stats',
+          `/send/${game}/stats`,
           (message) => fun(JSON.parse(message.body))
         );
       });

@@ -1,6 +1,6 @@
 import { Player } from './Player';
 
-export interface MatchData {
+export interface CsMatchData {
   teamAMatchPoints: number;
   teamBMatchPoints: number;
   teamAPlayers: Player[];
